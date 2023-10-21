@@ -727,7 +727,13 @@ img {
 .modal-text:focus {
   border-color: #4d5ae5;
 }
-
+.mob-menu-link{
+  color: #2e2f42;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+}
 .button-submit {
   display: block;
   min-width: 169px;
@@ -755,10 +761,11 @@ img {
   background: var(--OCEAN, #404bbf);
 }
 
-.is-open {
-  opacity: 1;
-  visibility: visible;
-}
+  .is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
 
 .check-text {
   color: var(--LIGHT-SLATE, #8e8f99);
@@ -792,9 +799,6 @@ img {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
-}
-
-.policy-link-span {
 }
 
 .wrapper-checkbox {
@@ -835,7 +839,6 @@ img {
   /* Mob menu */
 
   .mob-menu-window {
-    display: block;
     position: fixed;
     visibility: hidden;
     opacity: 0;
@@ -852,22 +855,29 @@ img {
     z-index: 999;
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .close-mob-menu {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: block;
+    margin-left: auto;
     border-radius: 50%;
     width: 24px;
     height: 24px;
-    top: 24px;
-    right: 24px;
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #e7e9fc;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0;
     cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 24px;
   }
 
   .close-mob-icon {
@@ -886,7 +896,9 @@ img {
     flex-direction: column;
     gap: 40px;
   }
-
+  .mob-menu-link-studio {
+    color:#404BBF;
+  }
   .mob-menu-li {
     color: var(--NAVY-BLUE, #2e2f42);
     font-size: 36px;
@@ -909,7 +921,24 @@ img {
     line-height: 1.2;
     letter-spacing: 0.02em;
   }
-
+.mob-menu-contacts-number{
+ color:#4D5AE5;
+ font-family: Roboto;
+ font-size: 20px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 24px;
+ letter-spacing: 0.4px;
+}
+.mob-menu-contacts{
+  color:#434455;
+  font-family: Roboto;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0.4px;
+}
   .mob-menu-soc {
     display: flex;
     justify-content: space-between;
@@ -1262,4 +1291,9 @@ img {
       padding: 72px 0px;
     }
   }
+}
+.is-open {
+  opacity: 1;
+  visibility:visible;
+  pointer-events: auto;
 }
